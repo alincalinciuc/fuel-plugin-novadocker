@@ -1,19 +1,19 @@
 # Plugin name
 name: fuel-plugin-docker
 # Human-readable name for your plugin
-title: Title for fuel-plugin-docker plugin
+title: Nova Docker installer
 # Plugin version
 version: '1.0.0'
 # Description
-description: Enable to use plugin X for Neutron
+description: Plugin that convert a compute node in nova-docker compute
 # Required fuel version
 fuel_version: ['6.1']
 # Specify license of your plugin
 licenses: ['Apache License Version 2.0']
 # Specify author or company name
-authors: ['Specify author or company name']
+authors: ['Daniel Depaoli']
 # A link to the plugin's page
-homepage: 'https://github.com/stackforge/fuel-plugins'
+homepage: 'https://github.com/ddepaoli3/fuel-plugin-docker'
 # Specify a group which your plugin implements, possible options:
 # network, storage, storage::cinder, storage::glance, hypervisor
 groups: []

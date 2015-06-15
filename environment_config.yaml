@@ -1,7 +1,14 @@
 attributes:
   fuel-plugin-docker_text:
-    value: 'Set default value'
-    label: 'Text field'
-    description: 'Description for text field'
+    value: 'cirros'
+    label: 'Containers list'
+    description: 'List of docker container to automatically download'
     weight: 25
     type: "text"
+    # Checkbox
+  fuel-plugin-docker_checkbox:
+    type: "checkbox"
+    weight: 30
+    value: false
+    label: "Install on all compute"
+    description: "If true the plugin will install docker on all computes"

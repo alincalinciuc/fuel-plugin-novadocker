@@ -6,7 +6,13 @@
   stage: post_deployment
   type: shell
   parameters:
-    cmd: ./deploy.sh
+    cmd: /bin/bash controller.sh
+    timeout: 42
+- role: ['compute']
+  stage: post_deployment
+  type: shell
+  parameters:
+    cmd: /bin/bash compute.sh
     timeout: 42
 # Task is applied for all roles
 - role: '*'
