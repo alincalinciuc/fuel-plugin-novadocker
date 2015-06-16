@@ -41,7 +41,7 @@ else
 fi
 
 #Check if the name of the node contains 'docker'
-if [[ `grep -r ^user_node_name /etc/compute.yaml|grep -i docker` ]]
+if hiera user_node_name|grep -i docker
 then
     echo "Hiera host name contains docker." >> $LOG_FILE
     echo "Proceed to docker installation" >> $LOG_FILE
