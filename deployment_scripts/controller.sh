@@ -9,6 +9,4 @@ service glance-api restart
 
 curl -sSL https://get.docker.com/ubuntu/ | sudo sh
 
-#source /root/openrc admin admin
-#docker pull cirros
-#docker save cirros | glance image-create --is-public=True --container-format=docker --disk-format=raw --name cirros
+exit 0

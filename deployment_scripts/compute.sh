@@ -37,7 +37,7 @@ then
 else
     echo "File $CONFIG_FILE does not exist" >> $LOG_FILE
     echo "This should not happen. Exit" >> $LOG_FILE
-    exit 1
+    exit 0
 fi
 
 #Check if the name of the node contains 'docker'
@@ -48,7 +48,7 @@ then
 else
     echo "Hiera host name does not contain docker." >> $LOG_FILE
     echo "Exit" >> $LOG_FILE
-    exit 1
+    exit 0
 fi
 
 #Install docker
@@ -70,3 +70,5 @@ echo 'ln: CommandFilter, /bin/ln, root' >> /etc/nova/rootwrap.d/docker.filters
 usermod -G docker nova
 
 service nova-compute restart
+
+exit 0
