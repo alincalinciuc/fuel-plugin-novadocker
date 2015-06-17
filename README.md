@@ -21,6 +21,10 @@ At the momement the only way to load a container into openstack is save the modu
 nova-docker cannot load container from glance. That is a knwon problem [1].
 A solution was proposed [2], but in my tests does't work.
 
-[1]: https://ask.openstack.org/en/question/55125/which-version-of-nova-docker-should-be-used-with-openstack-juno
-[2]: https://github.com/fikovnik/nova-docker/commit/1a08ea55df98f46fc5752adc4d5488508dacc827
-[3]: https://wiki.openstack.org/wiki/Fuel/Plugins
+References
+==========
+[1] https://ask.openstack.org/en/question/55125/which-version-of-nova-docker-should-be-used-with-openstack-juno
+
+[2] https://github.com/fikovnik/nova-docker/commit/1a08ea55df98f46fc5752adc4d5488508dacc827
+
+[3] https://wiki.openstack.org/wiki/Fuel/Plugins
