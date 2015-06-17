@@ -1,29 +1,5 @@
 #!/bin/bash
 
-##Function
-load_openrc(){
-    LC_ALL=C
-    OS_NO_CACHE='true'
-    OS_TENANT_NAME='admin'
-    OS_USERNAME=${1:-'admin'}
-    OS_PASSWORD=${2:-'admin'}
-    OS_AUTH_URL='http://192.168.0.1:5000/v2.0/'
-    OS_AUTH_STRATEGY='keystone'
-    OS_REGION_NAME='RegionOne'
-    CINDER_ENDPOINT_TYPE='internalURL'
-    GLANCE_ENDPOINT_TYPE='internalURL'
-    KEYSTONE_ENDPOINT_TYPE='internalURL'
-    NOVA_ENDPOINT_TYPE='internalURL'
-    NEUTRON_ENDPOINT_TYPE='internalURL'
-    OS_ENDPOINT_TYPE='internalURL'
-    MURANO_REPO_URL='http://storage.apps.openstack.org/'
-}
-
-save_container(){
-    test -z $1 && return 1
-    return `docker pull $1`
-}
-
 ##Variables
 LOG_FILE="/var/log/docker-plugin"
 CONFIG_FILE="/etc/compute.yaml"
