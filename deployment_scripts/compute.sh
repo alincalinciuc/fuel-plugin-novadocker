@@ -16,13 +16,21 @@ else
     exit 0
 fi
 
+#From hiera retrieves if all_nodes checkbox is checked
+#Must do a workaround with python because
+#hiera cannot return subkey correctly
+all_nodes=`hiera fuel-plugin-docker | sed -e 's/=>/:/g' | \
+python -c \
+'import json; \
+import sys; \
+print str(json.load(sys.stdin)["fuel-plugin-docker-2_checkbox"]).lower()'`
+
 #Check if the name of the node contains 'docker'
-if hiera user_node_name|grep -i docker
+if (hiera user_node_name|grep -i docker) || $all_nodes
 then
-    echo "Hiera host name contains docker." >> $LOG_FILE
     echo "Proceed to docker installation" >> $LOG_FILE
 else
-    echo "Hiera host name does not contain docker." >> $LOG_FILE
+    echo "No docker installation" >> $LOG_FILE
     echo "Exit" >> $LOG_FILE
     exit 0
 fi
