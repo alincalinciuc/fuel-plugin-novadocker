@@ -14,3 +14,9 @@
   parameters:
     cmd: /bin/bash compute.sh
     timeout: 42
+- role: ['primary-controller']
+  stage: post_deployment/6002
+  type: shell
+  parameters:
+    cmd: /bin/bash save-images.sh
+    timeout: 42
