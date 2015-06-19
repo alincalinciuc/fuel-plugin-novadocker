@@ -31,6 +31,27 @@ If 'Install on compute node' is set nova-docker is installed on all nodes, ignor
 ![plugin screenshot](https://github.com/ddepaoli3/fuel-plugin-docker/blob/master/imgs/docker-plugin-setting.png?raw=true)
 9. Deploy!
 
+Developer guide
+===============
+This section describes the operation performed by the plugin.
+There are 3 bash script:
+* compute.sh: executed on all computes after the deploy
+* controller.sh: executed on all controllers after the deploy
+* save-image.sh: executed on the primary controller after the deploy
+
+compute.sh
+----------
+It installs and configures docker and nova-docker
+At the end saves the listed docker images.
+
+controller.sh
+-------------
+It installs docker and allow glance to accept docker format containers.
+
+save-image.sh
+-------------
+Load to glance the docker images downloaded.
+
 Notes
 =====
 At the momement the only way to load a container into openstack is save the module on docker-compute host;
@@ -46,3 +67,5 @@ References
 [3] https://wiki.openstack.org/wiki/Fuel/Plugins
 
 [4] https://wiki.openstack.org/wiki/Fuel/Plugins#Preparing_an_environment_for_plugin_development
+
+[5] https://docs.docker.com/installation/ubuntulinux/
