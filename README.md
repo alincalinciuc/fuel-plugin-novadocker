@@ -3,17 +3,33 @@ fuel-plugin-docker
 
 This plugin install nova-docker on compute node.
 
-How to
-======
-1. Clone this repo and create the plugin. (More info at [3])
-2. Copy the rpm packet to fuel machine
-```scp fuel-plugin-docker-*.noarch.rpm root@10.20.0.2:```
-3. On fuel machine
-```fuel plugins --install fuel-plugin-docker-*.noarch.rpm```
-4. Create a new environment
-5. Change the name of the compute nodes on which docker will be installed with a name that contain 'docker'
-6. In the settings section activate docker plugin
-7. Deploy!
+User guide
+==========
+1. Prepare your environment for plugin development following the official guide: [4]
+2. Clone this repository
+```
+git clone https://github.com/ddepaoli3/fuel-plugin-docker.git
+```
+3. Create the plugin to load into Fuel
+```
+fpb --build fuel-plugin-docker
+```
+4. Copy the rpm packet to fuel machine
+```
+scp fuel-plugin-docker/fuel-plugin-docker-*.noarch.rpm root@10.20.0.2:
+```
+5. Install the plugin on the Fuel master machine
+```
+fuel plugins --install fuel-plugin-docker-*.noarch.rpm
+```
+6. Create a new environment
+7. Change the name of the compute nodes on which docker will be installed with a name that contain 'docker'
+![node screenshot](https://github.com/ddepaoli3/fuel-plugin-docker/blob/master/imgs/fuel-docker-screen.png?raw=true)
+8. In the settings section activate docker plugin. Here you can add the name of docker images that will
+load and load automatically to glance.
+If 'Install on compute node' is set nova-docker is installed on all nodes, ignoring the name of the node
+![plugin screenshot](https://github.com/ddepaoli3/fuel-plugin-docker/blob/master/imgs/docker-plugin-setting.png?raw=true)
+9. Deploy!
 
 Notes
 =====
@@ -28,3 +44,5 @@ References
 [2] https://github.com/fikovnik/nova-docker/commit/1a08ea55df98f46fc5752adc4d5488508dacc827
 
 [3] https://wiki.openstack.org/wiki/Fuel/Plugins
+
+[4] https://wiki.openstack.org/wiki/Fuel/Plugins#Preparing_an_environment_for_plugin_development
