@@ -2,18 +2,6 @@
 
 ##Variables
 LOG_FILE="/var/log/docker-plugin"
-CONFIG_FILE="/etc/compute.yaml"
-
-#The file '/etc/compute.yaml' should exist because this script
-#is executed only in compute node
-if [[ -e $CONFIG_FILE ]]
-then
-    echo "File $CONFIG_FILE exists" >> $LOG_FILE
-else
-    echo "File $CONFIG_FILE does not exist" >> $LOG_FILE
-    echo "This should not happen. Exit" >> $LOG_FILE
-    exit 0
-fi
 
 #From hiera retrieves if all_nodes checkbox is checked
 #Must do a workaround with python because
