@@ -4,7 +4,6 @@
 LOG_FILE="/var/log/docker-plugin"
 CONFIG_FILE="/etc/compute.yaml"
 
-
 #The file '/etc/compute.yaml' should exist because this script
 #is executed only in compute node
 if [[ -e $CONFIG_FILE ]]
@@ -36,12 +35,10 @@ else
 fi
 
 #Install docker
-curl -sSL https://get.docker.com/ubuntu/ | sh
+./docker-install.sh
 
-#Install nova-docker
-#For more details please refer to https://wiki.openstack.org/wiki/Docker
-apt-get update
-apt-get install git
+apt-get update -y || yum update -y
+apt-get install -y git || yum install -y git
 #Install pip from this script to avoid possibile problem with the version in repository
 wget -O- https://raw.github.com/pypa/pip/master/contrib/get-pip.py | python
 ln -s `which pip` /usr/bin/pip
@@ -56,7 +53,7 @@ echo '[Filters]' > /etc/nova/rootwrap.d/docker.filters
 echo 'ln: CommandFilter, /bin/ln, root' >> /etc/nova/rootwrap.d/docker.filters
 usermod -G docker nova
 
-service nova-compute restart
+service nova-compute restart || service openstack-nova-compute restart
 
 #Save images in compute node.
 #For a known limit the compute search the image locally
