@@ -8,7 +8,7 @@ OS_NAME=""
 ##Install Docker function
 docker_install_ubuntu()
 {
-    curl -sSL https://get.docker.com/ubuntu/ | sh
+    apt-get install lxc-docker
 }
 
 docker_install_centos()
