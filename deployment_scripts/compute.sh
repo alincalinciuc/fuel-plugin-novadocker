@@ -25,15 +25,8 @@ fi
 #Install docker
 ./docker-install.sh
 
-apt-get update -y || yum update -y
-apt-get install -y git || yum install -y git
-#Install pip from this script to avoid possibile problem with the version in repository
-wget -O- https://raw.github.com/pypa/pip/master/contrib/get-pip.py | python
-ln -s `which pip` /usr/bin/pip
-#Use a version of nova-docker adapt for fuel 6.1 Juno.
-git clone -b stable/juno https://github.com/ddepaoli3/nova-docker.git
-cd nova-docker
-python setup.py install
+#Install nova-docker from repository
+apt-get install python-nova-docker
 
 #Config nova
 echo -e "[DEFAULT]\ncompute_driver=novadocker.virt.docker.DockerDriver" > /etc/nova/nova-compute.conf
