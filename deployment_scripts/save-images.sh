@@ -23,7 +23,7 @@ echo "Images to save: ${images[@]}" >> $LOG_FILE
 for image in ${images[@]}
 do
     echo "Trying to save $image to glance" >> $LOG_FILE
-    docker pull $image && docker save $images | \
+    docker pull $image && docker save $image | \
     /usr/bin/glance\
     --os-auth-url ${os_auth_url} \
     --os-tenant-name ${os_tenant_name} \
