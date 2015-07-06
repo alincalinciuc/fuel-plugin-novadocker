@@ -8,6 +8,17 @@ os_tenant_name='admin'
 os_username='admin'
 os_password='admin'
 
+#If ping google dns it means there is internet connection,
+#so it can download docker images from internet
+if ping -c 1 8.8.8.8 >> /dev/null
+then
+    echo "Internet connection present. Proceed to save docker images" >> $LOG_FILE
+else
+    echo "Internet connection not present. Skip docker images saving" >> $LOG_FILE
+    echo "Exiting"
+    exit 0
+fi
+
 #Load images from hiera
 #Must do a workaround with python because
 #hiera cannot return subkey correctly

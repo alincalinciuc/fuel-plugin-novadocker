@@ -46,9 +46,17 @@ python -c \
 import sys; \
 print json.load(sys.stdin)["fuel-plugin-docker_text"].replace(" ","").replace(","," ")'`)
 
-for image in ${images[@]}
-do
-    docker pull $image
-done
+#If ping google dns it means there is internet connection,
+#so it can download docker images from internet
+if ping -c 1 8.8.8.8 >> /dev/null
+then
+    echo "Internet connection present. Proceed to save docker images" >> $LOG_FILE
+    for image in ${images[@]}
+    do
+        docker pull $image
+    done
+else
+    echo "Internet connection not present. Skip docker images saving" >> $LOG_FILE
+fi
 
 exit 0
