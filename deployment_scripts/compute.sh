@@ -26,7 +26,7 @@ fi
 ./docker-install.sh
 
 #Install nova-docker from repository
-apt-get install python-nova-docker
+apt-get install --yes python-nova-docker
 
 #Config nova
 echo -e "[DEFAULT]\ncompute_driver=novadocker.virt.docker.DockerDriver" > /etc/nova/nova-compute.conf
