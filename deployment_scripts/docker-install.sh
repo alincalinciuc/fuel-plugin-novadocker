@@ -8,7 +8,7 @@ OS_NAME=""
 ##Install Docker function
 docker_install_ubuntu()
 {
-    apt-get install lxc-docker
+    apt-get install --yes lxc-docker
 }
 
 docker_install_centos()
@@ -23,11 +23,10 @@ docker_install_centos()
 
 if hiera repo_setup|grep -i ubuntu
 then
-    echo "Install Docker on Ubuntu machine" >> $LOG_FILE
     OS_NAME="ubuntu"
 else
-    echo "Install Docker on Centos machine" >> $LOG_FILE
     OS_NAME="centos"
 fi
 
+echo "Install Docker on $OS_NAME machine" >> $LOG_FILE
 docker_install_$OS_NAME
