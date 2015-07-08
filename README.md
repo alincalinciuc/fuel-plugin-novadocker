@@ -24,11 +24,11 @@ fuel plugins --install fuel-plugin-docker-*.noarch.rpm
 ```
 6. Create a new environment
 7. Change the name of the compute nodes on which docker will be installed with a name that contain 'docker'
-![node screenshot](https://github.com/ddepaoli3/fuel-plugin-docker/blob/master/imgs/fuel-docker-screen.png?raw=true)
+![node screenshot](https://github.com/ddepaoli3/fuel-plugin-docker/blob/master/doc/images/fuel-docker-screen.png?raw=true)
 8. In the settings section activate docker plugin. Here you can add the name of docker images that will
 load and load automatically to glance.
 If 'Install on compute node' is set nova-docker is installed on all nodes, ignoring the name of the node
-![plugin screenshot](https://github.com/ddepaoli3/fuel-plugin-docker/blob/master/imgs/docker-plugin-setting.png?raw=true)
+![plugin screenshot](https://github.com/ddepaoli3/fuel-plugin-docker/blob/master/doc/images/docker-plugin-setting.png?raw=true)
 9. Deploy!
 
 Developer guide
