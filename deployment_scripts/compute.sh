@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ##Variables
-LOG_FILE="/var/log/docker-plugin"
+LOG_FILE="/var/log/fuel-plugin-novadocker.log"
 
 #From hiera retrieves if all_nodes checkbox is checked
 #Must do a workaround with python because

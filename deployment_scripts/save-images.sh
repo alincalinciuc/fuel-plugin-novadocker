@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #variable
-LOG_FILE="/var/log/docker-plugin"
+LOG_FILE="/var/log/fuel-plugin-novadocker.log"
 
 os_auth_url="http://`hiera management_vip`:5000/v2.0/"
 os_tenant_name='admin'
@@ -22,12 +22,12 @@ fi
 #Load images from hiera
 #Must do a workaround with python because
 #hiera cannot return subkey correctly
-images=(`hiera fuel-plugin-docker | \
+images=(`hiera fuel-plugin-novadocker | \
 sed -e 's/=>/:/g' | \
 python -c \
 'import json; \
 import sys; \
-print json.load(sys.stdin)["fuel-plugin-docker_text"].replace(" ","").replace(","," ")'`)
+print json.load(sys.stdin)["fuel-plugin-novadocker_text"].replace(" ","").replace(","," ")'`)
 
 echo "Images to save: ${images[@]}" >> $LOG_FILE
 

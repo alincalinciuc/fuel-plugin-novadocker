@@ -2,7 +2,7 @@
 
 #For more details please refer to https://wiki.openstack.org/wiki/Docker
 
-LOG_FILE="/var/log/docker-plugin"
+LOG_FILE="/var/log/fuel-plugin-novadocker.log"
 OS_NAME=""
 
 ##Install Docker function

@@ -1,12 +1,12 @@
 attributes:
-  fuel-plugin-docker_text:
+  fuel-plugin-novadocker_text:
     value: 'cirros'
     label: 'Containers list'
     description: 'List of docker container to automatically download'
     weight: 25
     type: "text"
     # Checkbox
-  fuel-plugin-docker_checkbox:
+  fuel-plugin-novadocker_checkbox:
     type: "checkbox"
     weight: 30
     value: false

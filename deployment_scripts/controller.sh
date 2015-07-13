@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ##Variables
-LOG_FILE="/var/log/docker-plugin"
+LOG_FILE="/var/log/fuel-plugin-novadocker.log"
 
 #Edit and restart glance
 echo "Change glance-api.conf config file" >> $LOG_FILE
