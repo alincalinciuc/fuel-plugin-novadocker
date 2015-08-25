@@ -39,12 +39,12 @@ service nova-compute restart || service openstack-nova-compute restart
 #Save images in compute node.
 #For a known limit the compute search the image locally
 #and don't get it from glance
-images=(`hiera fuel-plugin-docker | \
+images=(`hiera fuel-plugin-novadocker | \
 sed -e 's/=>/:/g' | \
 python -c \
 'import json; \
 import sys; \
-print json.load(sys.stdin)["fuel-plugin-docker_text"].replace(" ","").replace(","," ")'`)
+print json.load(sys.stdin)["fuel-plugin-novadocker_text"].replace(" ","").replace(","," ")'`)
 
 #If ping google dns it means there is internet connection,
 #so it can download docker images from internet
