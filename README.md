@@ -1,35 +1,13 @@
 fuel-plugin-novadocker
 ==================
 
-This plugin install nova-docker on compute node.
+Intro
+-----
+This plugin install nova-docker[6] on compute node.
 
-User guide
-==========
-1. Prepare your environment for plugin development following the official guide: [4]
-2. Clone this repository
-```
-git clone https://github.com/ddepaoli3/fuel-plugin-novadocker.git
-```
-3. Create the plugin to load into Fuel
-```
-fpb --build fuel-plugin-novadocker
-```
-4. Copy the rpm packet to fuel machine
-```
-scp fuel-plugin-novadocker/fuel-plugin-novadocker-*.noarch.rpm root@10.20.0.2:
-```
-5. Install the plugin on the Fuel master machine
-```
-fuel plugins --install fuel-plugin-novadocker-*.noarch.rpm
-```
-6. Create a new environment
-7. Change the name of the compute nodes on which docker will be installed with a name that contain 'docker'
-![node screenshot](https://github.com/ddepaoli3/fuel-plugin-novadocker/blob/master/doc/images/fuel-docker-screen.png?raw=true)
-8. In the settings section activate docker plugin. Here you can add the name of docker images that will
-load and load automatically to glance.
-If 'Install on compute node' is set nova-docker is installed on all nodes, ignoring the name of the node
-![plugin screenshot](https://github.com/ddepaoli3/fuel-plugin-novadocker/blob/master/doc/images/docker-plugin-setting.png?raw=true)
-9. Deploy!
+Usage
+-----
+To install plugin please refer to [install guide](doc/content/installation.rst). To use it, refer to [user guide](doc/content/guide.rst)
 
 Developer guide
 ===============
@@ -71,3 +49,5 @@ References
 [4] https://wiki.openstack.org/wiki/Fuel/Plugins#Preparing_an_environment_for_plugin_development
 
 [5] https://docs.docker.com/installation/ubuntulinux/
+
+[6] https://wiki.openstack.org/wiki/Docker
