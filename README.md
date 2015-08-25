@@ -7,7 +7,7 @@ This plugin install nova-docker[6] on compute node.
 
 Usage
 -----
-To install plugin please refer to [install guide](doc/content/installation.rst). To use it, refer to [user guide](doc/content/guide.rst)
+To install plugin please refer to [install guide](doc/source/content/installation.rst). To use it, refer to [user guide](doc/source/content/guide.rst)
 
 Developer guide
 ===============
