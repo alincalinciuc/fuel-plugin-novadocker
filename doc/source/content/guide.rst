@@ -9,7 +9,7 @@ User Guide
 	b. write the name of docker containers that automatically will be downloaded and loaded to glance. The official docker container repository is [6].
 	c. To install on all computes node select the 'Install on all compute' option
 
-	.. image:: _static/docker-plugin-setting.png
+	.. image:: https://github.com/SmartInfrastructures/fuel-plugin-novadocker/blob/master/doc/source/_static/docker-plugin-setting.png
   	 :alt: Plugin Screenshot
 
 	d. To install on one ore more specific nodes rename the nodes with a name containing 'docker'.
