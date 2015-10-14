@@ -14,7 +14,7 @@ User Guide
 
 	d. To install on one ore more specific nodes rename the nodes with a name containing 'docker'.
 
-.. image:: _static/fuel-docker-screen.png
+.. image:: https://github.com/SmartInfrastructures/fuel-plugin-novadocker/blob/master/doc/source/_static/fuel-docker-screen.png
    :alt: Node Screenshot
 
 
