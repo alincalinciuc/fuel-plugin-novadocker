@@ -1,6 +1,7 @@
 Installation Guide
 ==================
-1. Prepare your environment for plugin development following the official guide: [4]
+
+1. Prepare your environment for plugin development following the `official guide <https://wiki.openstack.org/wiki/Fuel/Plugins#Preparing_an_environment_for_plugin_development>`_
 
 2. Clone this repository
 ```
