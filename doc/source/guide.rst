@@ -5,7 +5,7 @@ User Guide
 
 2. In the 'Settings' section:
 
-	a. activate the plugin
+	a. activate the plugin clicking on 'Nova Docker installer'
 	b. write the name of docker containers that automatically will be downloaded and loaded to glance. The official docker container repository is [6].
 	c. To install on all computes node select the 'Install on all compute' option
 
@@ -18,6 +18,6 @@ User Guide
    :alt: Node Screenshot
 
 
-4. Deploy the environment.
+3. Deploy the environment.
 
-5. For how to use nova-docker refers to officiale guide [7].
+4. For how to use nova-docker refers to officiale guide [7].
