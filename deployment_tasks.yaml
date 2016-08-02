@@ -2,19 +2,22 @@
 # here you can also specify several roles, for example
 # ['cinder', 'compute'] will be applied only on
 # cinder and compute nodes
-- role: ['controller', 'primary-controller']
+- id: task-shell-configure-controller
+  role: ['controller', 'primary-controller']
   stage: post_deployment/6000
   type: shell
   parameters:
     cmd: /bin/bash controller.sh
     timeout: 600
-- role: ['compute']
+- id: task-shell-configure-compute
+  role: ['compute']
   stage: post_deployment/6001
   type: shell
   parameters:
     cmd: /bin/bash compute.sh
     timeout: 600
-- role: ['primary-controller']
+- id: task-shell-save-images
+  role: ['primary-controller']
   stage: post_deployment/6002
   type: shell
   parameters:
